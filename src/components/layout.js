@@ -44,6 +44,9 @@ const GlobalStyle = createGlobalStyle`
   *, *::before, *::after{
     box-sizing: border-box;
   }
+  main{
+    margin: 0;
+  }
 
 `
 const Layout = ({ children }) => {
@@ -63,13 +66,7 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <SEO title="StartUp Homepage" />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <div>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
