@@ -8,7 +8,7 @@ const StyledWrapper = styled.div`
 `
 const StyledBanner = styled.div`
   height: 100vh;
-  width: 100vw;
+  /* width: 100vw; */
   color: ${props => props.theme.colors.white};
 
   div {

@@ -7,8 +7,6 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
 import { createGlobalStyle, ThemeProvider } from "styled-components"
 import { Normalize } from "styled-normalize"
 import { theme } from "../styles/theme"
@@ -58,22 +56,12 @@ const GlobalStyle = createGlobalStyle`
 
 `
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <ThemeProvider theme={theme}>
       <Normalize />
       <GlobalStyle />
       <SEO title="StartUp Homepage" />
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle="StartUp" />
       <div>
         <main>{children}</main>
         <footer>
