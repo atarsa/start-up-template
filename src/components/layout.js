@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
+import { createGlobalStyle, ThemeProvider } from "styled-components"
 import { Normalize } from "styled-normalize"
 import { theme } from "../styles/theme"
 
@@ -35,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1, h2, h3, h4, h5, h6{
     font-family: 'Montserrat', sans-serif;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     padding: 0;
     margin: 0;
     
@@ -46,6 +46,14 @@ const GlobalStyle = createGlobalStyle`
   }
   main{
     margin: 0;
+  }
+
+  /* helpers */
+  .primary{
+    color: ${props => props.theme.primaryColor};
+  }
+  .bold{
+    font-weight: ${props => props.theme.font.bold};
   }
 
 `
