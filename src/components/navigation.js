@@ -13,20 +13,17 @@ const StyledLink = styled(Link)`
   :hover,
   :focus {
     color: ${props => props.theme.primaryColor};
-    transform: scale(1.2);
+  }
+
+  @media (min-width: ${props => props.theme.breakpoints.large}) {
+    :hover,
+    :focus {
+      transform: scale(1.2);
+    }
   }
 `
-
-const StyledNav = styled.nav`
-  border: 1px solid ${props => props.theme.colors.gold};
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0.5rem;
-`
-
 const Navigation = () => (
-  <StyledNav>
+  <nav role="navigation">
     <StyledLink to="#home">home</StyledLink>
     <StyledLink to="#services">services</StyledLink>
     <StyledLink to="#about">about</StyledLink>
@@ -34,7 +31,7 @@ const Navigation = () => (
     <StyledLink to="#team">team</StyledLink>
     <StyledLink to="#price">price</StyledLink>
     <StyledLink to="#contact">contact</StyledLink>
-  </StyledNav>
+  </nav>
 )
 
 export default Navigation

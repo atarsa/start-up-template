@@ -33,7 +33,7 @@ const StyledBanner = styled.div`
       font-size: 4rem;
       text-transform: uppercase;
       padding: 2rem;
-      margin-top: -15rem;
+      /* margin-top: -8rem; */
     }
     h2 {
       font-size: 2rem;
