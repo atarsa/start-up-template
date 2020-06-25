@@ -18,6 +18,13 @@ import SEO from "../components/seo"
 import "typeface-montserrat"
 import "fontsource-hind-madurai"
 
+// load font awsome icons and create library
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { fab } from "@fortawesome/free-brands-svg-icons"
+import { faBars, faCross } from "@fortawesome/free-solid-svg-icons"
+library.add(fab, faBars, faCross)
+
+
 const GlobalStyle = createGlobalStyle`
   html{
     font-size: 62.5%; /* Now 10px = 1rem! */
