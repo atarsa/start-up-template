@@ -21,8 +21,8 @@ import "fontsource-hind-madurai"
 // load font awsome icons and create library
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { fab } from "@fortawesome/free-brands-svg-icons"
-import { faBars, faCross } from "@fortawesome/free-solid-svg-icons"
-library.add(fab, faBars, faCross)
+import { faBars, faTrophy, faCog, faLaptop, faClock, faHeart, faMagic } from "@fortawesome/free-solid-svg-icons"
+library.add(fab, faBars, faTrophy, faCog, faLaptop, faClock, faHeart, faMagic)
 
 
 const GlobalStyle = createGlobalStyle`

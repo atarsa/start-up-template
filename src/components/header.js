@@ -49,6 +49,10 @@ const StyledHeader = styled.header`
       flex-direction: row;
       border: none;
     }
+
+    .small-display nav {
+      display: none;
+    }
   }
 `
 const DivWrapper = styled.div`
@@ -114,7 +118,11 @@ const Header = ({ siteTitle }) => {
           />
         </button>
       </DivWrapper>
-      <NavWrapper hidden={hidden} className="small-display">
+      <NavWrapper
+        hidden={hidden}
+        className="small-display"
+        onClick={() => setHidden(!hidden)}
+      >
         <Navigation />
       </NavWrapper>
       <NavWrapper className="large-display">

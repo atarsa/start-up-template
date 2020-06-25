@@ -66,7 +66,7 @@ const StyledImg = styled(Img)`
 const StyledSection = styled.section`
   padding: 2rem;
   margin: 2rem auto;
-  max-width: 1000px;
+  max-width: 1200px;
 
   h2 {
     font-weight: ${props => props.theme.font.regular};
@@ -89,7 +89,7 @@ const Home = () => {
     }
   `)
   return (
-    <StyledWrapper>
+    <StyledWrapper id="home">
       <StyledBanner>
         <StyledImg
           fluid={data.file.childImageSharp.fluid}

@@ -5,5 +5,6 @@ export const colors = {
   light: "rgba(255, 255, 255, 0.5)",
   lighter: "rgba(255, 255, 255, 0.2)",
   black: "#020202",
-  darkGrey: "#6c757d",
+  lightGrey: "#e6e6e6",
+  darkGrey: "#797979",
 }
