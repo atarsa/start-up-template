@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 const StyledSection = styled.section`
   background: ${props => props.theme.colors.lightGrey};
   padding: 3rem 2rem;
+  margin-bottom: 5rem;
 
   .container {
     max-width: 1200px;
