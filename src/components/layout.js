@@ -20,10 +20,29 @@ import "fontsource-hind-madurai"
 
 // load font awsome icons and create library
 import { library } from "@fortawesome/fontawesome-svg-core"
-import { fab } from "@fortawesome/free-brands-svg-icons"
-import { faBars, faTrophy, faCog, faLaptop, faClock, faHeart, faMagic, faArrowCircleRight } from "@fortawesome/free-solid-svg-icons"
-library.add(fab, faBars, faTrophy, faCog, faLaptop, faClock, faHeart, faMagic, faArrowCircleRight)
+import { fab, faTwitter, faFacebook } from "@fortawesome/free-brands-svg-icons"
+import {
+  faBars,
+  faTrophy,
+  faCog,
+  faLaptop,
+  faClock,
+  faHeart,
+  faMagic,
+  faArrowCircleRight,
+} from "@fortawesome/free-solid-svg-icons"
 
+library.add(
+  fab,
+  faBars,
+  faTrophy,
+  faCog,
+  faLaptop,
+  faClock,
+  faHeart,
+  faMagic,
+  faArrowCircleRight
+)
 
 const GlobalStyle = createGlobalStyle`
   html{

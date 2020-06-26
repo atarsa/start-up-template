@@ -99,7 +99,7 @@ const About = () => {
           />
         </div>
 
-        <div class="more-info">
+        <div className="more-info">
           <p>
             Non-disclosure agreement bandwidth termsheet channels product
             management growth hacking stock crowdfunding incubator hypotheses
