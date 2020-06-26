@@ -17,7 +17,7 @@ const StyledSection = styled.section`
     }
   }
   .quote__container {
-    background: ${props => props.theme.colors.darkGrey};
+    background: ${props => props.theme.colors.grey};
     padding: 5rem 2rem;
 
     h3 {
