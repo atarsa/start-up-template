@@ -54,6 +54,7 @@ const StyledSection = styled.section`
 
   .more-info {
     margin-bottom: 5rem;
+    align-self: flex-start;
   }
 
   ul {
@@ -163,7 +164,7 @@ const About = () => {
           </ul>
         </div>
         <div className="more-info">
-          <h3>Amazing bootstrap template ideas</h3>
+          <h3>Cutting-edge technology</h3>
           <p>
             Churn rate metrics long tail client infographic android seed round
             equity customer investor creative. Entrepreneur technology social
