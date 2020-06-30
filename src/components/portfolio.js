@@ -1,13 +1,42 @@
 import React from "react"
 import styled from "styled-components"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import YAMLData from "../content/projects.yaml"
 import SectionHeading from "./sectionHeading"
+import Project from "./project"
 
 const StyledSection = styled.section`
-  .container {
+  .projects__container {
     max-width: 1200px;
     padding: 3rem 2rem;
+    margin-bottom: 5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    grid-gap: 2rem;
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    @media (min-width: ${props => props.theme.breakpoints.medium}) {
+      grid-template-columns: repeat(2, 1fr);
+      .buttons {
+        grid-column: span 2;
+
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+    @media (min-width: ${props => props.theme.breakpoints.large}) {
+      grid-template-columns: repeat(4, 1fr);
+
+      .buttons {
+        grid-column: span 4;
+      }
+    }
   }
 
   .quote__container {
@@ -19,110 +48,43 @@ const StyledSection = styled.section`
     }
   }
 `
+const StyledBtn = styled.button`
+  padding: 1rem 2rem;
+  margin: 0.4rem 0.5rem;
+  text-transform: uppercase;
+  color: ${props => props.theme.colors.darkGrey};
+  background: ${props => props.theme.colors.white};
+  border: 1px solid ${props => props.theme.colors.grey};
+
+  &:hover,
+  &:focus {
+    color: ${props => props.theme.colors.white};
+    background: ${props => props.theme.primaryColor};
+    border: 1px solid ${props => props.theme.colors.white};
+  }
+`
 
 const Portfolio = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      web1: file(relativePath: { eq: "project-1.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 750) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      web2: file(relativePath: { eq: "project-2.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 750) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      web3: file(relativePath: { eq: "project-3.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 750) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      web4: file(relativePath: { eq: "project-4.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 750) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      web5: file(relativePath: { eq: "project-5.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 750) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      web6: file(relativePath: { eq: "project-6.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 750) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      app1: file(relativePath: { eq: "project-7.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 750) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      app2: file(relativePath: { eq: "project-8.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 750) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      app3: file(relativePath: { eq: "project-9.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 750) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      mobile1: file(relativePath: { eq: "project-10.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 750) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      mobile2: file(relativePath: { eq: "project-11.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 750) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      mobile3: file(relativePath: { eq: "project-12.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 750) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <StyledSection id="portfolio">
       <SectionHeading heading="Portfolio" info="Our latest projects." />
-      <div>
-        <button>All</button>
-        <button>Web Design</button>
-        <button>App Development</button>
-        <button>Mobile App</button>
+
+      <div className="projects__container">
+        <div className="buttons">
+          <StyledBtn>All</StyledBtn>
+          <StyledBtn>Web Design</StyledBtn>
+          <StyledBtn>App Development</StyledBtn>
+          <StyledBtn>Mobile App</StyledBtn>
+        </div>
+        {YAMLData.projects.map(({ project }, index) => (
+          <Project
+            title={project.title}
+            img={project.image}
+            category={project.category}
+          />
+        ))}
       </div>
-      <div>
-        {/* <Img fluid={data.web1.childImageSharp.fluid} alt="" />
-         */}
-      </div>
+
       <div className="quote__container">
         <h3>Clients Testimonials</h3>
         {/* Testimonial component */}
