@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Accordion from "./accordion"
 
 const StyledSection = styled.section`
   .container {
@@ -14,6 +15,7 @@ const StyledSection = styled.section`
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 2rem;
       margin: 0 auto;
+      align-items: center;
     }
   }
   .quote__container {
@@ -62,6 +64,10 @@ const StyledSection = styled.section`
       padding: 0.5rem 0;
     }
   }
+
+  .accordion-container {
+    align-self: start;
+  }
 `
 const StyledIcon = styled(FontAwesomeIcon)`
   color: ${props => props.theme.primaryColor};
@@ -81,7 +87,26 @@ const About = () => {
       }
     }
   `)
-
+  const accordionItems = [
+    {
+      title: "Collapsable Group Item #1",
+      content:
+        "Consectetur adipisicing sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde. Quae sed, incidunt laudantium  nesciunt, optio corporis quod earum pariatur omnis illo saepe numquam  suscipit, nemo placeat ntium, ut unde. Quae sed, incidunt laudantium  nesciunt, optio corporis quod earumdignissimos eius mollitia et quas  officia doloremque ipsum labore rem deserunt.",
+      id: 1,
+    },
+    {
+      title: "Collapsable Group Item #2",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde. Quae sed, incidunt laudantium nesciunt, optio corporis quod earum pariatur omnis illo saepe numquam suscipit, nemo placeat ntium, ut unde. Quae sed, incidunt laudantium nesciunt, optio corporis quod earumdignissimos eius mollitia et quas officia doloremque ipsum labore rem deserunt.",
+      id: 2,
+    },
+    {
+      title: "Collapsable Group Item #3",
+      content:
+        "Soon blessed came plainly out word, velvet lenore my over ebony he. And sat mefilled as there merely, door rare i thou ghost my loneliness you the, lenore eagerly me.",
+      id: 3,
+    },
+  ]
   return (
     <StyledSection id="about">
       <h2>
@@ -176,43 +201,15 @@ const About = () => {
             money A/B testing hackathon deployment.
           </p>
         </div>
-        <section>
-          <div>
-            <div>Collapsible Gruop Item #1</div>
-            <p>
-              Consectetur adipisicing sit amet, consectetur adipisicing elit.
-              Atque sed, quidem quis praesentium, ut unde. Quae sed, incidunt
-              laudantium nesciunt, optio corporis quod earum pariatur omnis illo
-              saepe numquam suscipit, nemo placeat ntium, ut unde. Quae sed,
-              incidunt laudantium nesciunt, optio corporis quod earumdignissimos
-              eius mollitia et quas officia doloremque ipsum labore rem
-              deserunt.
-            </p>
-          </div>
-
-          <div>
-            <div>Collapsible Gruop Item #2</div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
-              sed, quidem quis praesentium, ut unde. Quae sed, incidunt
-              laudantium nesciunt, optio corporis quod earum pariatur omnis illo
-              saepe numquam suscipit, nemo placeat ntium, ut unde. Quae sed,
-              incidunt laudantium nesciunt, optio corporis quod earumdignissimos
-              eius mollitia et quas officia doloremque ipsum labore rem
-              deserunt.
-            </p>
-          </div>
-
-          <div>
-            <div>Collapsible Gruop Item #3</div>
-            <p>
-              Soon blessed came plainly out word, velvet lenore my over ebony
-              he. And sat mefilled as there merely, door rare i thou ghost my
-              loneliness you the, lenore eagerly me.
-            </p>
-          </div>
-        </section>
-        {/* TODO ACCORDION */}
+        <div className="accordion-container">
+          {accordionItems.map(item => (
+            <Accordion
+              title={item.title}
+              content={item.content}
+              key={item.id}
+            />
+          ))}
+        </div>
       </div>
       <div className="quote__container">
         <h3>Usus est magister optimus.</h3>
