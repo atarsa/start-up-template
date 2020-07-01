@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Accordion from "./accordion"
 
 const StyledSection = styled.section`
+  margin-bottom: 5rem;
+  
   .container {
     max-width: 1200px;
     padding: 3rem 2rem;
@@ -20,7 +22,7 @@ const StyledSection = styled.section`
   }
   .quote__container {
     background: ${props => props.theme.colors.grey};
-    padding: 5rem 2rem;
+    padding: 7rem 2rem;
 
     h3 {
       text-align: center;
@@ -68,6 +70,7 @@ const StyledSection = styled.section`
 
   .accordion-container {
     align-self: start;
+    margin-bottom: 5rem;
   }
 `
 const StyledIcon = styled(FontAwesomeIcon)`
