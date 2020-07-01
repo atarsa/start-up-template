@@ -12,7 +12,7 @@ const Image = props => (
               relativePath
               name
               childImageSharp {
-                fluid(maxWidth: 1000) {
+                fluid(maxWidth: 750) {
                   ...GatsbyImageSharpFluid_tracedSVG
                 }
               }

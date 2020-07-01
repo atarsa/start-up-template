@@ -8,10 +8,11 @@ const StyledSection = styled.section`
   .projects__container {
     max-width: 1200px;
     padding: 3rem 2rem;
-    margin-bottom: 5rem;
+    margin: 0 auto 5rem;
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
+    justify-content: center;
     grid-gap: 2rem;
 
     .buttons {
@@ -24,7 +25,6 @@ const StyledSection = styled.section`
       grid-template-columns: repeat(2, 1fr);
       .buttons {
         grid-column: span 2;
-
         flex-direction: row;
         justify-content: center;
       }
