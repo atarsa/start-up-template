@@ -48,10 +48,10 @@ const StyledIcon = styled(FontAwesomeIcon)`
   color: ${props => props.theme.colors.white};
   font-size: 30px;
 `
-const BgImage = ({ children, filename }) => {
+const BgImage = ({ children, filename, alt }) => {
   return (
     <BGWrapper>
-      <FakeBgImage filename={filename} />
+      <FakeBgImage filename={filename} alt={alt} />
       <Content>{children}</Content>
       <HoverDiv aria-hidden="true">
         <StyledIcon icon="search-plus" />

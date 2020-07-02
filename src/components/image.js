@@ -30,7 +30,7 @@ const Image = props => (
       }
 
       const imageFluid = image.node.childImageSharp.fluid
-      return <Img alt={props.alt} fluid={imageFluid} />
+      return <Img alt={props.alt} fluid={imageFluid} style={props.style} />
     }}
   />
 )

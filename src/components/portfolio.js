@@ -81,6 +81,8 @@ const Portfolio = () => {
             title={project.title}
             img={project.image}
             category={project.category}
+            description={project.description}
+            key={project.title}
           />
         ))}
       </div>
