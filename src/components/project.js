@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import BgImage from "./bgImage"
 import Portal from "./portal"
@@ -16,15 +16,13 @@ const ProjectWrapper = styled.button`
   }
 `
 
-
-const Project = ({ title, img, category, description }) => {
+const Project = ({ title, img, description }) => {
   const [isOpen, setIsOpen] = useState(false)
-
   const handleClick = () => setIsOpen(!isOpen)
 
   return (
     <>
-      <ProjectWrapper data-category={category} onClick={handleClick}>
+      <ProjectWrapper onClick={handleClick}>
         <BgImage filename={img} alt={title}>
           <p>{title}</p>
         </BgImage>

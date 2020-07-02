@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import YAMLData from "../content/projects.yaml"
 import SectionHeading from "./sectionHeading"
@@ -57,7 +57,8 @@ const StyledBtn = styled.button`
   border: 1px solid ${props => props.theme.colors.grey};
 
   &:hover,
-  &:focus {
+  &:focus,
+  &.active {
     color: ${props => props.theme.colors.white};
     background: ${props => props.theme.primaryColor};
     border: 1px solid ${props => props.theme.colors.white};
@@ -65,22 +66,46 @@ const StyledBtn = styled.button`
 `
 
 const Portfolio = () => {
+  const [projects, setProjects] = useState([])
+
+  useEffect(() => {
+    setProjects(YAMLData.projects)
+  }, [])
+
+  const showAll = () => {
+    setProjects(YAMLData.projects)
+  }
+
+  const showFiltered = category => {
+    const filteredProjects = YAMLData.projects.filter(({ project }) =>
+      project.category.includes(category)
+    )
+    setProjects(filteredProjects)
+    // remove .active clas from 'all' btn
+    document.querySelector("#showAll").classList.remove("active")
+  }
+
   return (
     <StyledSection id="portfolio">
       <SectionHeading heading="Portfolio" info="Our latest projects." />
 
       <div className="projects__container">
         <div className="buttons">
-          <StyledBtn>All</StyledBtn>
-          <StyledBtn>Web Design</StyledBtn>
-          <StyledBtn>App Development</StyledBtn>
-          <StyledBtn>Mobile App</StyledBtn>
+          <StyledBtn onClick={() => showAll()} className="active" id="showAll">
+            All
+          </StyledBtn>
+          <StyledBtn onClick={() => showFiltered("web")}>Web Design</StyledBtn>
+          <StyledBtn onClick={() => showFiltered("app")}>
+            App Development
+          </StyledBtn>
+          <StyledBtn onClick={() => showFiltered("mobile")}>
+            Mobile App
+          </StyledBtn>
         </div>
-        {YAMLData.projects.map(({ project }, index) => (
+        {projects.map(({ project }) => (
           <Project
             title={project.title}
             img={project.image}
-            category={project.category}
             description={project.description}
             key={project.title}
           />
