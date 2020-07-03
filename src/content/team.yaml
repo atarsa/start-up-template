@@ -1,0 +1,23 @@
+---
+title: Team members
+
+team:
+  - team_member:
+    name: "Jane Doe"
+    position: "General Manager"
+    img: "woman-3.jpg"
+
+  - team_member:
+    name: "Sara Williams"
+    position: "UI/UX Designer"
+    img: "woman-1.jpg"
+
+  - team_member:
+    name: "Mike Wilson"
+    position: "Project Manager"
+    img: "man-3.jpg"
+
+  - team_member:
+    name: "James Smith"
+    position: "Developer"
+    img: "man_2.jpg"

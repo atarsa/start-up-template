@@ -20,7 +20,7 @@ import "fontsource-hind-madurai"
 
 // load font awsome icons and create library
 import { library } from "@fortawesome/fontawesome-svg-core"
-import { fab, faTwitter, faFacebook } from "@fortawesome/free-brands-svg-icons"
+import { fab } from "@fortawesome/free-brands-svg-icons"
 import {
   faBars,
   faTrophy,
@@ -30,7 +30,7 @@ import {
   faHeart,
   faMagic,
   faArrowCircleRight,
-  faSearchPlus
+  faSearchPlus,
 } from "@fortawesome/free-solid-svg-icons"
 
 library.add(
