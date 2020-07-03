@@ -3,6 +3,7 @@ import styled from "styled-components"
 import YAMLData from "../content/projects.yaml"
 import SectionHeading from "./sectionHeading"
 import Project from "./project"
+import Testimonials from "./testimonials"
 
 const StyledSection = styled.section`
   .projects__container {
@@ -114,7 +115,7 @@ const Portfolio = () => {
 
       <div className="quote__container">
         <h3>Clients Testimonials</h3>
-        {/* Testimonial component */}
+        <Testimonials />
       </div>
     </StyledSection>
   )

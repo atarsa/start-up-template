@@ -31,6 +31,7 @@ import {
   faMagic,
   faArrowCircleRight,
   faSearchPlus,
+  faQuoteLeft,
 } from "@fortawesome/free-solid-svg-icons"
 
 library.add(
@@ -43,7 +44,8 @@ library.add(
   faHeart,
   faMagic,
   faArrowCircleRight,
-  faSearchPlus
+  faSearchPlus,
+  faQuoteLeft
 )
 
 const GlobalStyle = createGlobalStyle`
