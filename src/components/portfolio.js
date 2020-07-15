@@ -42,7 +42,7 @@ const StyledSection = styled.section`
 
   .quote__container {
     background: ${props => props.theme.colors.grey};
-    padding: 5rem 2rem;
+    padding: 5rem 2rem 7rem;
 
     h3 {
       text-align: center;
