@@ -46,6 +46,8 @@ const StyledSection = styled.section`
 
     h3 {
       text-align: center;
+      font-size: 2.6rem;
+      font-weight: 500;
     }
   }
 `
