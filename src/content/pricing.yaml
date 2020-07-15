@@ -1,0 +1,35 @@
+---
+title: Pricing
+
+pricing:
+  - plan:
+    name: "basic"
+    price: "$9.99"
+    projects: "5 Projects"
+    storage: "5 GB of Storage"
+    users: "Up to 100 Users"
+    bandwidth: "10 GB Bandwidth"
+
+  - plan:
+    name: "plus"
+    price: "$19.99"
+    projects: "10 Projects"
+    storage: "10 GB of Storage"
+    users: "Up to 250 Users"
+    bandwidth: "25 GB Bandwidth"
+
+  - plan:
+    name: "premium"
+    price: "$29.99"
+    projects: "Unlimited"
+    storage: "50 GB of Storage"
+    users: "Up to 1000 Users"
+    bandwidth: "100 GB Bandwidth"
+
+  - plan:
+    name: "ultimate"
+    price: "$49.99"
+    projects: "Unlimited"
+    storage: "150 GB of Storage"
+    users: "Unlimited"
+    bandwidth: "500 GB Bandwidth"

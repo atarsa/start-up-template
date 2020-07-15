@@ -10,7 +10,7 @@ const StyledSection = styled.section`
 `
 const StyledWrapper = styled.div`
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 5rem;
   display: grid;
   align-items: center;
   justify-content: center;

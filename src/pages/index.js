@@ -5,6 +5,7 @@ import Services from "../components/services"
 import About from "../components/about"
 import Portfolio from "../components/portfolio"
 import Team from "../components/team"
+import Pricing from "../components/pricing"
 const IndexPage = () => (
   <Layout>
     <Home />
@@ -12,6 +13,7 @@ const IndexPage = () => (
     <About />
     <Portfolio />
     <Team />
+    <Pricing />
   </Layout>
 )
 
