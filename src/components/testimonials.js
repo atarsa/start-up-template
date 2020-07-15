@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useCallback, useState } from "react"
 import styled from "styled-components"
 import YAMLData from "../content/testimonials.yaml"
 import Image from "./image"
@@ -8,11 +8,11 @@ const Wrapper = styled.div`
   max-width: 1000px;
   height: 30rem;
   margin: 3rem auto 2rem;
- 
+
   blockquote {
     margin: 0;
   }
-  
+
   .testimonial {
     height: 100%;
     display: none;
@@ -53,9 +53,9 @@ const Wrapper = styled.div`
         : props.theme.colors.lightGrey};
 
     &:hover,
-    &:focus,
     &.active {
       background: ${props => props.theme.colors.darkGrey};
+      cursor: pointer;
     }
   }
 `
@@ -63,9 +63,27 @@ const StyledIcon = styled(FontAwesomeIcon)`
   color: ${props => props.theme.colors.darkGrey};
   margin: 1rem;
 `
-
 const Testimonials = () => {
   const testimonials = YAMLData.testimonials
+
+  // set current index
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const intervalRef = useRef(currentIndex)
+  intervalRef.current = currentIndex
+
+  function showCurrent(selector) {
+    const elements = document.querySelectorAll(selector)
+
+    elements.forEach(e =>
+      e.dataset.index === currentIndex.toString()
+        ? e.classList.add("active")
+        : e.classList.remove("active")
+    )
+  }
+  // update current index
+  const handleClick = e => {
+    setCurrentIndex(parseInt(e.target.dataset.index))
+  }
 
   // eslint-disable
   useEffect(() => {
@@ -76,28 +94,29 @@ const Testimonials = () => {
     for (let i = 0; i < testimonials.length; i++) {
       const dot = document.createElement("button")
       dot.classList.add("dot")
-      dot.dataset.indexNumber = i
+      dot.dataset.index = i
       dot.addEventListener("click", handleClick)
       dotsDiv.appendChild(dot)
     }
   }, [])
 
-  // set current index
-  let currentIndex = 0
+  // show adequte testimonial and corresponding dot
+  useEffect(() => {
+    showCurrent("blockquote")
+    showCurrent(".dot")
+  }, [currentIndex])
 
-  // show or hide testimonial depending on the current index
-  const handleClick = e => {
-    // update current indes
-    currentIndex = e.target.dataset.indexNumber
-    // get all testimonials, loop through them, if data-index same: add 'current/active' class otherwise remove that class
-    const testimonials = document.querySelectorAll("blockquote")
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (intervalRef.current < testimonials.length - 1) {
+        setCurrentIndex(c => c + 1)
+      } else {
+        setCurrentIndex(0)
+      }
+    }, 3000)
+    return () => clearInterval(timer)
+  }, [])
 
-    testimonials.forEach(t =>
-      t.dataset.index === currentIndex
-        ? t.classList.add("active")
-        : t.classList.remove("active")
-    )
-  }
   return (
     <Wrapper>
       {testimonials.map((testimonial, index) => (
