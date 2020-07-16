@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import styled from "styled-components"
 
 const Wrapper = styled.div`
@@ -24,4 +25,8 @@ const SectionHeading = ({ heading, info }) => {
   )
 }
 
+SectionHeading.propTypes = {
+  heading: PropTypes.string.isRequired,
+  info: PropTypes.string,
+}
 export default SectionHeading
