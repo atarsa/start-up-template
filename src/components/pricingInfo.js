@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-
+import Button from "../styles/Button"
 const Wrapper = styled.div`
   border: 1px solid ${props => props.theme.colors.grey};
   border-radius: 3px;
@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   text-transform: capitalize;
-  
+
   header {
     width: 100%;
     background: ${props => props.theme.colors.lighterGrey};
@@ -35,21 +35,10 @@ const Wrapper = styled.div`
     }
   }
 
-  button {
-    padding: 1rem 2rem;
+  a{
     margin: 1.5rem;
-    background: ${props => props.theme.primaryColor};
-    color: ${props => props.theme.colors.white};
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease-in;
-
-    :hover {
-      background: ${props => props.theme.colors.gold};
-      color: ${props => props.theme.colors.black};
-      transition: all 0.3s ease-in;
-    }
   }
+  
 `
 const PricingInfo = ({ name, price, projects, storage, users, bandwidth }) => (
   <Wrapper>
@@ -68,7 +57,7 @@ const PricingInfo = ({ name, price, projects, storage, users, bandwidth }) => (
       <li>Security Suite</li>
     </ul>
     <a>
-      <button>Sign Up Now!</button>
+      <Button>Sign Up Now!</Button>
     </a>
   </Wrapper>
 )

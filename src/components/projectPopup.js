@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import Image from "./image"
+import Button from "../styles/Button"
 
 const PopupWrapper = styled.aside`
   position: fixed;
@@ -58,21 +59,7 @@ const PopupWrapper = styled.aside`
   .content__button {
     display: flex;
     justify-content: end;
-
-    button {
-      margin: 1.5rem;
-      padding: 1rem 4rem;
-      color: #fff;
-      background: ${props => props.theme.primaryColor};
-      border: none;
-      text-transform: uppercase;
-      cursor: pointer;
-
-      :hover {
-        background: ${props => props.theme.colors.gold};
-        transition: background 0.5s ease-in;
-      }
-    }
+    padding: 1.5rem;
   }
 `
 // code reference https://stackoverflow.com/a/56489521
@@ -133,7 +120,7 @@ const ProjectPopup = ({ title, img, description, toggleModal }) => {
           </div>
         </div>
         <div className="content__button">
-          <button onClick={toggleModal}>Close</button>
+          <Button onClick={toggleModal}>Close</Button>
         </div>
       </div>
     </PopupWrapper>
