@@ -56,11 +56,11 @@ const StyledWrapper = styled.div`
       margin-right: 0.5rem;
     }
     .twitter-btn:hover {
-      background: #55acee;
+      background: ${props => props.theme.colors.twitter};
     }
 
     .fb-btn:hover {
-      background: #3b5998;
+      background: ${props => props.theme.colors.fb};
     }
   }
 `

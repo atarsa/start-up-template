@@ -9,4 +9,9 @@ export const colors = {
   lightGrey: "#e6e6e6",
   grey: "#d6d6d6",
   darkGrey: "#797979",
+  fb: "#3b5998",
+  twitter: "#55acee",
+  linkedin: "#0e76a8",
+  yt: "#ff0000"
+
 }

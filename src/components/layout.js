@@ -34,7 +34,9 @@ import {
   faQuoteLeft,
   faUser,
   faEnvelope,
-  faPen
+  faPen,
+  faMapMarker,
+  faPhoneAlt,
 } from "@fortawesome/free-solid-svg-icons"
 
 library.add(
@@ -51,7 +53,9 @@ library.add(
   faQuoteLeft,
   faUser,
   faEnvelope,
-  faPen
+  faPen,
+  faMapMarker,
+  faPhoneAlt
 )
 
 const GlobalStyle = createGlobalStyle`
