@@ -12,6 +12,7 @@ import { Normalize } from "styled-normalize"
 import { theme } from "../styles/theme"
 
 import Header from "./header"
+import Footer from "./footer"
 import SEO from "../components/seo"
 
 // Load fonts
@@ -102,14 +103,10 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <SEO title="StartUp Homepage" />
       <Header siteTitle="StartUp" />
-      <div>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+
+      <main>{children}</main>
+
+      <Footer />
     </ThemeProvider>
   )
 }
