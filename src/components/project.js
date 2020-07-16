@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import BgImage from "./bgImage"
 import Portal from "./portal"
@@ -18,11 +18,19 @@ const ProjectWrapper = styled.button`
 
 const Project = ({ title, img, description }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const handleClick = () => setIsOpen(!isOpen)
+  const toggleModal = () => setIsOpen(!isOpen)
+
+   // Add focus to main close button when modal is open
+  useEffect(() => {
+    const closeBtn = document.querySelector(".content__button button")
+    if (closeBtn) {
+      closeBtn.focus()
+    }
+  }, [isOpen])
 
   return (
     <>
-      <ProjectWrapper onClick={handleClick}>
+      <ProjectWrapper onClick={toggleModal}>
         <BgImage filename={img} alt={title}>
           <p>{title}</p>
         </BgImage>
@@ -33,7 +41,8 @@ const Project = ({ title, img, description }) => {
             title={title}
             img={img}
             description={description}
-            handleClick={handleClick}
+            toggleModal={toggleModal}
+                        
           />
         </Portal>
       )}

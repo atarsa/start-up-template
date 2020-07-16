@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import Image from "./image"
 
@@ -75,14 +75,43 @@ const PopupWrapper = styled.aside`
     }
   }
 `
+// code reference https://stackoverflow.com/a/56489521
+// answer by Tomer
+function useOnClick(ref, handler) {
+  // eslint-disable-block
+  useEffect(() => {
+    const listener = e => {
+      // Do nothing if clicking ref's element or descendent elements
+      if (!ref.current || ref.current.contains(e.target)) {
+        return
+      }
+      handler(e)
+    }
+    document.addEventListener("mousedown", listener)
+    return () => {
+      document.removeEventListener("mousedown", listener)
+    }
+    /* eslint-disable-next-line */
+  }, [])
+}
 
-const ProjectPopup = ({ title, img, description, handleClick }) => {
+const ProjectPopup = ({ title, img, description, toggleModal }) => {
+  const ref = useRef()
+  useOnClick(ref, toggleModal)
+
+  // close popup on pressing esc key
+  const handleKeyDown = e => {
+    if (e.keyCode === 27) {
+      toggleModal()
+    }
+  }
   return (
     <PopupWrapper>
-      <div className="content">
+      {/* eslint-disable-next-line */}
+      <div className="content" ref={ref} onKeyDown={handleKeyDown}>
         <div className="content__header">
           <h3>{title}</h3>
-          <button onClick={handleClick}>x</button>
+          <button onClick={toggleModal}>x</button>
         </div>
         <div className="content__main">
           <div className="content__img">
@@ -104,7 +133,7 @@ const ProjectPopup = ({ title, img, description, handleClick }) => {
           </div>
         </div>
         <div className="content__button">
-          <button onClick={handleClick}>Close</button>
+          <button onClick={toggleModal}>Close</button>
         </div>
       </div>
     </PopupWrapper>
