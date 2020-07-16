@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
 import YAMLData from "../content/testimonials.yaml"
 import Image from "./image"
@@ -98,13 +98,13 @@ const Testimonials = () => {
       dot.addEventListener("click", handleClick)
       dotsDiv.appendChild(dot)
     }
-  }, [])
+  }, []) // eslint-disable-line
 
   // show adequte testimonial and corresponding dot
   useEffect(() => {
     showCurrent("blockquote")
     showCurrent(".dot")
-  }, [currentIndex])
+  }, [currentIndex]) // eslint-disable-line
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -115,7 +115,7 @@ const Testimonials = () => {
       }
     }, 3000)
     return () => clearInterval(timer)
-  }, [])
+  }, []) // eslint-disable-line
 
   return (
     <Wrapper>

@@ -40,17 +40,22 @@ const ContactForm = () => {
     <StyledForm name="contact" method="POST" data-netlify="true">
       <div className="input__container">
         <label htmlFor="name">Name:</label>
-        <input type="text" placeholder="Name" id="name" />
+        <input type="text" placeholder="Name" id="name" aria-label="name" />
         <FontAwesomeIcon icon="user" />
       </div>
       <div className="input__container">
         <label htmlFor="email">Email:</label>
-        <input type="text" placeholder="Email" id="email" />
+        <input type="text" placeholder="Email" id="email" aria-label="email" />
         <FontAwesomeIcon icon="envelope" />
       </div>
       <div className="input__container">
         <label htmlFor="message">Message:</label>
-        <textarea placeholder="Message" id="message" rows="7" />
+        <textarea
+          placeholder="Message"
+          id="message"
+          rows="7"
+          aria-label="message"
+        />
         <FontAwesomeIcon icon="pen" />
       </div>
 

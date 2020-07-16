@@ -35,10 +35,9 @@ const Wrapper = styled.div`
     }
   }
 
-  a{
+  div {
     margin: 1.5rem;
   }
-  
 `
 const PricingInfo = ({ name, price, projects, storage, users, bandwidth }) => (
   <Wrapper>
@@ -56,9 +55,9 @@ const PricingInfo = ({ name, price, projects, storage, users, bandwidth }) => (
       <li>{bandwidth}</li>
       <li>Security Suite</li>
     </ul>
-    <a>
+    <div>
       <Button>Sign Up Now!</Button>
-    </a>
+    </div>
   </Wrapper>
 )
 

@@ -45,7 +45,7 @@ const Accordion = ({ title, content, id }) => {
 
   useEffect(() => {
     toggleAccordion()
-  }, [])
+  }, []) // eslint-disable-line
 
   return (
     <StyledAccordion active={!isActive}>
