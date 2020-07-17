@@ -10,14 +10,12 @@ const StyledLink = styled(Link)`
   padding: 1rem 0.8rem;
   color: ${props => props.theme.colors.white};
 
-  :hover,
-  :focus {
+  :hover {
     color: ${props => props.theme.primaryColor};
   }
 
   @media (min-width: ${props => props.theme.breakpoints.large}) {
-    :hover,
-    :focus {
+    :hover {
       transform: scale(1.2);
     }
   }

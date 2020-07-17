@@ -95,6 +95,11 @@ const GlobalStyle = createGlobalStyle`
     font-weight: ${props => props.theme.font.bold};
   }
 
+  .activeNav{
+    color: ${props => props.theme.primaryColor};
+    transform: scale(1.2)
+  }
+
 `
 const Layout = ({ children }) => {
   return (
