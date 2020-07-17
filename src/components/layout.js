@@ -65,6 +65,7 @@ const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
   }
   body{
+    
     font-family: 'Hind Madurai', sans-serif;
     /* happy rems  😄 */
     font-size: 16px; /* px fallback */
@@ -98,6 +99,14 @@ const GlobalStyle = createGlobalStyle`
   .activeNav{
     color: ${props => props.theme.primaryColor};
     transform: scale(1.2)
+  }
+  .activeHeader{
+   background: ${props => props.theme.colors.black};
+
+   .logo{
+     transform: scale(1);
+     transition: transform 1s ease-out;
+   }
   }
 
 `

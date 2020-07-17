@@ -7,20 +7,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Navigation from "./navigation"
 
 const StyledHeader = styled.header`
-  /* TODO: when adding Intersection Observer make it fixed after home section and default to positiopn relative */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 4;
-  background: ${props => props.theme.colors.black};
+  background: transparent;
   padding: 0 2rem 1rem;
   display: grid;
 
   .logo {
     display: inline-flex;
     align-items: center;
-    padding-right: 2rem;
+    padding: 1rem 2rem 0rem 1rem;
+    transform: scale(1.2);
+
+    transition: transform 1s ease-out;
 
     h1 {
       margin-left: 1rem;
@@ -38,6 +40,7 @@ const StyledHeader = styled.header`
     justify-content: space-between;
     border-top: ${props => (props.hidden ? "none" : "1px solid #fff")};
     margin-top: 2.5rem;
+    background: ${props => props.theme.colors.black};
   }
 
   .large-display nav {
