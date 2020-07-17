@@ -76,6 +76,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     setProjects(YAMLData.projects)
+    console.log(projects)
   }, [])
 
   const showAll = () => {

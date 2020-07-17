@@ -39,7 +39,7 @@ const StyledHeader = styled.header`
     flex-direction: column;
     justify-content: space-between;
     border-top: ${props => (props.hidden ? "none" : "1px solid #fff")};
-    margin-top: 2.5rem;
+    /* margin-top: 2rem; */
     background: ${props => props.theme.colors.black};
   }
 
@@ -65,7 +65,7 @@ const DivWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
 
   button {
     background: none;

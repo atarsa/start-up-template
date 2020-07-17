@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
+import { motion } from "framer-motion"
 import Image from "./image"
 import Button from "../styles/Button"
 
@@ -15,6 +16,7 @@ const PopupWrapper = styled.aside`
   background: rgba(0, 0, 0, 0.75);
 
   .content {
+    position: relative;
     background: #fff;
     margin: 3rem 1.5rem;
 
@@ -62,6 +64,7 @@ const PopupWrapper = styled.aside`
     padding: 1.5rem;
   }
 `
+// hide popup on clcik beyond popup's content
 // code reference https://stackoverflow.com/a/56489521
 // answer by Tomer
 function useOnClick(ref, handler) {
@@ -82,6 +85,17 @@ function useOnClick(ref, handler) {
   }, [])
 }
 
+const modal = {
+  hidden: { top: "-100%" },
+  visible: {
+    top: "5%",
+    transition: { delay: 0.5 },
+  },
+  exit: {
+    top: "100%",
+  },
+}
+
 const ProjectPopup = ({ title, img, description, toggleModal }) => {
   const ref = useRef()
   useOnClick(ref, toggleModal)
@@ -92,10 +106,18 @@ const ProjectPopup = ({ title, img, description, toggleModal }) => {
       toggleModal()
     }
   }
+
   return (
     <PopupWrapper>
       {/* eslint-disable-next-line */}
-      <div className="content" ref={ref} onKeyDown={handleKeyDown}>
+      <motion.div
+        className="content"
+        variants={modal}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+        onKeyDown={handleKeyDown}
+      >
         <div className="content__header">
           <h3>{title}</h3>
           <button onClick={toggleModal}>x</button>
@@ -122,7 +144,7 @@ const ProjectPopup = ({ title, img, description, toggleModal }) => {
         <div className="content__button">
           <Button onClick={toggleModal}>Close</Button>
         </div>
-      </div>
+      </motion.div>
     </PopupWrapper>
   )
 }

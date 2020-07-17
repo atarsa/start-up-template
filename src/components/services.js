@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const StyledSection = styled.section`
@@ -53,10 +55,32 @@ const StyledIcon = styled(FontAwesomeIcon)`
 `
 
 const Services = () => {
+  const [ref, inView] = useInView()
+
+  const variants = {
+    hidden: {
+      opacity: 0,
+      x: "-50%",
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        mass: 0.6,
+      },
+    },
+  }
   return (
     <StyledSection id="services">
       <h2>Services</h2>
-      <div className="container">
+      <motion.div
+        ref={ref}
+        className="container"
+        variants={variants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+      >
         <div className="service">
           <StyledIcon icon="trophy" />
           <div className="service__info">
@@ -117,7 +141,7 @@ const Services = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </StyledSection>
   )
 }
