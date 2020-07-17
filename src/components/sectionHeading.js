@@ -12,7 +12,7 @@ const Wrapper = styled.div`
     font-size: 1.8rem;
     font-weight: ${props => props.theme.font.thin};
     text-align: center;
-    margin-bottom: 5rem;
+    /* margin-bottom: 5rem; */
   }
 `
 

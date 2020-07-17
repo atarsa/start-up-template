@@ -6,10 +6,18 @@ import SectionHeading from "./sectionHeading"
 import Image from "./image"
 
 const StyledSection = styled.section`
-  margin-top: 3rem;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  padding-top: 8rem;
+
+  @media (min-width: ${props => props.theme.breakpoints.large}) {
+    grid-template-rows: 30rem 1fr;
+  }
 `
 const StyledWrapper = styled.div`
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto 5rem;
   display: grid;
   align-items: center;

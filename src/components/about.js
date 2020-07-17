@@ -6,8 +6,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Accordion from "./accordion"
 
 const StyledSection = styled.section`
-  margin-bottom: 5rem;
-  
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  padding-top: 6rem;
+
   .container {
     max-width: 1200px;
     padding: 3rem 2rem;
@@ -35,6 +38,7 @@ const StyledSection = styled.section`
   h2 {
     font-size: 3.5rem;
     text-align: center;
+    padding-top: 2rem;
   }
   h3 {
     font-size: 3rem;

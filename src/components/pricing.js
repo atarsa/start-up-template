@@ -5,10 +5,13 @@ import PricingInfo from "./pricingInfo"
 import YAMLData from "../content/pricing.yaml"
 
 const StyledSection = styled.section`
-  padding: 3rem 2rem;
-  margin-bottom: 5rem;
+  padding: 8rem 2rem;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
 
   .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     display: grid;

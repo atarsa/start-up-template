@@ -7,7 +7,10 @@ import ContactForm from "./contactForm"
 const StyledSection = styled.section`
   background: ${props => props.theme.colors.black};
   color: ${props => props.theme.colors.white};
-  padding: 3rem 2rem;
+  padding: 10rem 2rem 3rem;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
 
   .container {
     max-width: 1200px;

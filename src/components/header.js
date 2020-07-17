@@ -14,15 +14,17 @@ const StyledHeader = styled.header`
   width: 100%;
   z-index: 4;
   background: ${props => props.theme.colors.black};
-  padding: 2rem 2rem 0 2rem;
+  padding: 0 2rem 1rem;
   display: grid;
 
   .logo {
     display: inline-flex;
     align-items: center;
     padding-right: 2rem;
-    margin-top: 5px;
 
+    h1 {
+      margin-left: 1rem;
+    }
     a {
       color: ${props => props.theme.colors.white};
       text-decoration: none;
@@ -35,6 +37,7 @@ const StyledHeader = styled.header`
     flex-direction: column;
     justify-content: space-between;
     border-top: ${props => (props.hidden ? "none" : "1px solid #fff")};
+    margin-top: 2.5rem;
   }
 
   .large-display nav {
@@ -59,13 +62,15 @@ const DivWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-top: 3.5rem;
 
   button {
     background: none;
     border: none;
-
-    @media (min-width: ${props => props.theme.breakpoints.large}) {
+  }
+  @media (min-width: ${props => props.theme.breakpoints.large}) {
+    margin-top: 0;
+    button {
       display: none;
     }
   }
@@ -90,7 +95,7 @@ const Header = ({ siteTitle }) => {
     query {
       file(relativePath: { eq: "rocket.png" }) {
         childImageSharp {
-          fixed(width: 70) {
+          fixed(width: 50) {
             ...GatsbyImageSharpFixed
           }
         }

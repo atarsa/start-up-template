@@ -3,12 +3,11 @@ import styled from "styled-components"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const StyledWrapper = styled.div`
+const StyledSection = styled.section`
   position: relative;
 `
 const StyledBanner = styled.div`
   height: 100vh;
-  /* width: 100vw; */
   color: ${props => props.theme.colors.white};
 
   div {
@@ -63,8 +62,8 @@ const StyledImg = styled(Img)`
   top: 0;
   left: 0;
 `
-const StyledSection = styled.section`
-  padding: 2rem;
+const StyledWrapper = styled.div`
+  padding: 8rem 2rem 2rem;
   margin: 2rem auto;
   max-width: 1200px;
 
@@ -89,7 +88,7 @@ const Home = () => {
     }
   `)
   return (
-    <StyledWrapper id="home">
+    <StyledSection id="home">
       <StyledBanner>
         <StyledImg
           fluid={data.file.childImageSharp.fluid}
@@ -103,12 +102,12 @@ const Home = () => {
             <br />
             Espice, adspice, prospice
           </h2>
-          <Link to="/#intro">
+          <Link to="#intro">
             <button> Read More</button>
           </Link>
         </div>
       </StyledBanner>
-      <StyledSection id="intro">
+      <StyledWrapper id="intro">
         <h2>
           welcome to <span className="bold">StartUp</span> -{" "}
           <span className="primary">Start</span>, run and grow your business.
@@ -120,8 +119,8 @@ const Home = () => {
           In hac habitasse platea dictumst. Ut nec tellus neque. Sed non dui
           eget arcu elementum facilisis.
         </p>
-      </StyledSection>
-    </StyledWrapper>
+      </StyledWrapper>
+    </StyledSection>
   )
 }
 

@@ -5,7 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 const StyledSection = styled.section`
   background: ${props => props.theme.colors.lightGrey};
   padding: 3rem 2rem;
-  margin-bottom: 5rem;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
 
   .container {
     max-width: 1200px;
@@ -35,6 +37,9 @@ const StyledSection = styled.section`
     display: flex;
     margin-bottom: 2rem;
   }
+  @media (min-width: ${props => props.theme.breakpoints.large}) {
+    grid-template-rows: 30rem 1fr;
+  }
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`
@@ -47,7 +52,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
   margin-right: 1.5rem;
 `
 
-const services = () => {
+const Services = () => {
   return (
     <StyledSection id="services">
       <h2>Services</h2>
@@ -117,4 +122,4 @@ const services = () => {
   )
 }
 
-export default services
+export default Services

@@ -6,10 +6,13 @@ import Project from "./project"
 import Testimonials from "./testimonials"
 
 const StyledSection = styled.section`
+  min-height: 100vh;
+  padding-top: 8rem;
+
   .projects__container {
     max-width: 1200px;
     padding: 3rem 2rem;
-    margin: 0 auto 5rem;
+    margin: 0 auto 2rem;
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
@@ -42,7 +45,7 @@ const StyledSection = styled.section`
 
   .quote__container {
     background: ${props => props.theme.colors.grey};
-    padding: 5rem 2rem 7rem;
+    padding: 3rem 2rem 4rem;
 
     h3 {
       text-align: center;
