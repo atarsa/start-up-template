@@ -3,6 +3,8 @@ import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 import Accordion from "./accordion"
 
 const StyledSection = styled.section`
@@ -115,6 +117,23 @@ const About = () => {
       id: 3,
     },
   ]
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  })
+  // animation variants
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  }
+  const item = {
+    hidden: { opacity: 0, x: "-100px" },
+    show: { opacity: 1, x: 0 },
+  }
   return (
     <StyledSection id="about">
       <h2>
@@ -146,29 +165,34 @@ const About = () => {
             fruit monetization channels vesting period ramen backing first mover
             advantage technology client churn rate.
           </p>
-          <ul>
-            <li>
+          <motion.ul
+            ref={ref}
+            variants={container}
+            initial="hidden"
+            animate={inView ? "show" : "hidden"}
+          >
+            <motion.li variants={item}>
               {" "}
               <StyledIcon icon="arrow-circle-right" />
               Lorem ipsum enimdolor sit ame
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={item}>
               <StyledIcon icon="arrow-circle-right" />
               Explicabo deleniti neque aliquid
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={item}>
               <StyledIcon icon="arrow-circle-right" />
               Consectetur adipisicing elit
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={item}>
               <StyledIcon icon="arrow-circle-right" />
               Lorem ipsum dolor sit amet
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={item}>
               <StyledIcon icon="arrow-circle-right" />
               Quo issimos molest quibusdam temporibus
-            </li>
-          </ul>
+            </motion.li>
+          </motion.ul>
         </div>
         <div className="more-info">
           <h3>Cutting-edge technology</h3>
