@@ -51,7 +51,6 @@ const StyledSection = styled.section`
       text-align: center;
       font-size: 2.6rem;
       font-weight: 500;
-      
     }
   }
 `
@@ -77,7 +76,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     setProjects(YAMLData.projects)
-    console.log(projects)
+    // eslint-disable-next-line
   }, [])
 
   const showAll = () => {
