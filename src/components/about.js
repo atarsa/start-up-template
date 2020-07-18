@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
+import { InView } from "react-intersection-observer"
 import Accordion from "./accordion"
 
 const StyledSection = styled.section`
@@ -117,9 +117,6 @@ const About = () => {
       id: 3,
     },
   ]
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-  })
   // animation variants
   const container = {
     hidden: { opacity: 0 },
@@ -131,7 +128,7 @@ const About = () => {
     },
   }
   const item = {
-    hidden: { opacity: 0, x: "-100px" },
+    hidden: { opacity: 0, x: "-10px" },
     show: { opacity: 1, x: 0 },
   }
   return (
@@ -165,34 +162,38 @@ const About = () => {
             fruit monetization channels vesting period ramen backing first mover
             advantage technology client churn rate.
           </p>
-          <motion.ul
-            ref={ref}
-            variants={container}
-            initial="hidden"
-            animate={inView ? "show" : "hidden"}
-          >
-            <motion.li variants={item}>
-              {" "}
-              <StyledIcon icon="arrow-circle-right" />
-              Lorem ipsum enimdolor sit ame
-            </motion.li>
-            <motion.li variants={item}>
-              <StyledIcon icon="arrow-circle-right" />
-              Explicabo deleniti neque aliquid
-            </motion.li>
-            <motion.li variants={item}>
-              <StyledIcon icon="arrow-circle-right" />
-              Consectetur adipisicing elit
-            </motion.li>
-            <motion.li variants={item}>
-              <StyledIcon icon="arrow-circle-right" />
-              Lorem ipsum dolor sit amet
-            </motion.li>
-            <motion.li variants={item}>
-              <StyledIcon icon="arrow-circle-right" />
-              Quo issimos molest quibusdam temporibus
-            </motion.li>
-          </motion.ul>
+          <InView>
+            {({ inView, ref }) => (
+              <motion.ul
+                ref={ref}
+                variants={container}
+                initial="hidden"
+                animate={inView ? "show" : "hidden"}
+              >
+                <motion.li variants={item}>
+                  {" "}
+                  <StyledIcon icon="arrow-circle-right" />
+                  Lorem ipsum enimdolor sit ame
+                </motion.li>
+                <motion.li variants={item}>
+                  <StyledIcon icon="arrow-circle-right" />
+                  Explicabo deleniti neque aliquid
+                </motion.li>
+                <motion.li variants={item}>
+                  <StyledIcon icon="arrow-circle-right" />
+                  Consectetur adipisicing elit
+                </motion.li>
+                <motion.li variants={item}>
+                  <StyledIcon icon="arrow-circle-right" />
+                  Lorem ipsum dolor sit amet
+                </motion.li>
+                <motion.li variants={item}>
+                  <StyledIcon icon="arrow-circle-right" />
+                  Quo issimos molest quibusdam temporibus
+                </motion.li>
+              </motion.ul>
+            )}
+          </InView>
         </div>
         <div className="more-info">
           <h3>Cutting-edge technology</h3>
@@ -204,28 +205,39 @@ const About = () => {
             business-to-consumer advisor beta business plan user experience
             ownership branding. Deployment validation long tail iPhone.
           </p>
-          <ul>
-            <li>
-              <StyledIcon icon="arrow-circle-right" />
-              Lorem ipsum enimdolor sit ame
-            </li>
-            <li>
-              <StyledIcon icon="arrow-circle-right" />
-              Explicabo deleniti neque aliquid
-            </li>
-            <li>
-              <StyledIcon icon="arrow-circle-right" />
-              Consectetur adipisicing elit
-            </li>
-            <li>
-              <StyledIcon icon="arrow-circle-right" />
-              Lorem ipsum dolor sit amet
-            </li>
-            <li>
-              <StyledIcon icon="arrow-circle-right" />
-              Quo issimos molest quibusdam temporibus
-            </li>
-          </ul>
+          <InView>
+            {({ inView, ref, entry }) => (
+              <motion.ul
+                ref={ref}
+                variants={container}
+                initial="hidden"
+                animate={inView ? "show" : "hidden"}
+              >
+                <motion.li variants={item}>
+                  {" "}
+                  <StyledIcon icon="arrow-circle-right" />
+                  Lorem ipsum enimdolor sit ame
+                </motion.li>
+                <motion.li variants={item}>
+                  <StyledIcon icon="arrow-circle-right" />
+                  Explicabo deleniti neque aliquid
+                </motion.li>
+                <motion.li variants={item}>
+                  <StyledIcon icon="arrow-circle-right" />
+                  Consectetur adipisicing elit
+                </motion.li>
+                <motion.li variants={item}>
+                  <StyledIcon icon="arrow-circle-right" />
+                  Lorem ipsum dolor sit amet
+                </motion.li>
+                <motion.li variants={item}>
+                  <StyledIcon icon="arrow-circle-right" />
+                  Quo issimos molest quibusdam temporibus
+                </motion.li>
+              </motion.ul>
+            )}
+          </InView>
+
           <p>
             Ownership social media crowdsource gen-z partnership. Equity venture
             customer investor. Bootstrapping graphical user interface equity low
