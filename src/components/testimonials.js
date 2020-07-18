@@ -5,9 +5,13 @@ import Image from "./image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Wrapper = styled.div`
-  max-width: 1000px;
-  height: 30rem;
+  max-width: 800px;
+  height: 35rem;
   margin: 3rem auto 2rem;
+
+  @media (min-width: ${props => props.theme.breakpoints.medium}) {
+    height: 25rem;
+  }
 
   blockquote {
     margin: 0;
@@ -15,7 +19,10 @@ const Wrapper = styled.div`
 
   .testimonial {
     height: 100%;
-    display: none;
+    position: absolute;
+    overflow: hidden;
+    visibility: hidden;
+    transform: translateX(50%);
     grid-template-columns: 1fr;
     align-items: center;
     justify-content: center;
@@ -33,6 +40,10 @@ const Wrapper = styled.div`
   }
   .testimonial.active {
     display: grid;
+    position: relative;
+    visibility: visible;
+    transform: translateX(0);
+    transition: all 0.5s ease-out;
   }
 
   .dots {
@@ -113,7 +124,7 @@ const Testimonials = () => {
       } else {
         setCurrentIndex(0)
       }
-    }, 3000)
+    }, 5000)
     return () => clearInterval(timer)
   }, []) // eslint-disable-line
 

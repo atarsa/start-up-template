@@ -51,6 +51,7 @@ const StyledSection = styled.section`
       text-align: center;
       font-size: 2.6rem;
       font-weight: 500;
+      
     }
   }
 `
