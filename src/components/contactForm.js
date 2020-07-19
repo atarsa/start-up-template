@@ -37,15 +37,17 @@ const StyledForm = styled.form`
 `
 const ContactForm = () => {
   return (
-    <StyledForm name="contact" method="POST" data-netlify="true">
+    <StyledForm name="contact" method="post" data-netlify="true" netlify-honeypot="bot-field" >
+      <input type="hidden" name="bot-field" />
+     <input type="hidden" name="form-name" value="contact" />
       <div className="input__container">
         <label htmlFor="name">Name:</label>
-        <input type="text" placeholder="Name" id="name" aria-label="name" />
+        <input type="text" placeholder="Name" id="name" aria-label="name" name="name"/>
         <FontAwesomeIcon icon="user" />
       </div>
       <div className="input__container">
         <label htmlFor="email">Email:</label>
-        <input type="text" placeholder="Email" id="email" aria-label="email" />
+        <input type="text" placeholder="Email" id="email" aria-label="email" name="email" />
         <FontAwesomeIcon icon="envelope" />
       </div>
       <div className="input__container">
@@ -55,6 +57,7 @@ const ContactForm = () => {
           id="message"
           rows="7"
           aria-label="message"
+          name="message"
         />
         <FontAwesomeIcon icon="pen" />
       </div>
