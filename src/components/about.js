@@ -162,7 +162,7 @@ const About = () => {
             fruit monetization channels vesting period ramen backing first mover
             advantage technology client churn rate.
           </p>
-          <InView>
+          <InView triggerOnce="yes">
             {({ inView, ref }) => (
               <motion.ul
                 ref={ref}
@@ -205,8 +205,8 @@ const About = () => {
             business-to-consumer advisor beta business plan user experience
             ownership branding. Deployment validation long tail iPhone.
           </p>
-          <InView>
-            {({ inView, ref, entry }) => (
+          <InView triggerOnce="yes">
+            {({ inView, ref }) => (
               <motion.ul
                 ref={ref}
                 variants={container}

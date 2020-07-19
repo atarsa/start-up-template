@@ -30,7 +30,7 @@ const AccordionContent = styled(motion.div)`
 `
 
 const Accordion = ({ title, content, id }) => {
-  const [isActive, setIsActive] = useState(false)
+  const [isActive, setIsActive] = useState(true)
 
   const spanContent = useRef()
   const toggleAccordion = () => {

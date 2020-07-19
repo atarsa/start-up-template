@@ -18,11 +18,11 @@ const Wrapper = styled.div`
   }
 
   .testimonial {
-    height: 100%;
+    height: 0;
     position: absolute;
     overflow: hidden;
     visibility: hidden;
-    transform: translateX(50%);
+    transform: translateX(20%);
     grid-template-columns: 1fr;
     align-items: center;
     justify-content: center;
@@ -39,11 +39,12 @@ const Wrapper = styled.div`
     }
   }
   .testimonial.active {
+    height: 100%;
     display: grid;
     position: relative;
     visibility: visible;
     transform: translateX(0);
-    transition: all 0.5s ease-out;
+    transition: transform 0.5s ease-out;
   }
 
   .dots {
@@ -106,6 +107,7 @@ const Testimonials = () => {
       const dot = document.createElement("button")
       dot.classList.add("dot")
       dot.dataset.index = i
+      dot.setAttribute("aria-label", `Testimonial ${i + 1}`)
       dot.addEventListener("click", handleClick)
       dotsDiv.appendChild(dot)
     }
