@@ -14,8 +14,8 @@ Live version can be found [here](https://startup-tempalte.netlify.app/)
 - Intersection Observer
 - Netlify Forms
 
-![Startup website template homepage screenshot]((https://raw.githubusercontent.com/atarsa/start-up-template/master/Screenshot.png)
-)
+![Startup website template homepage screenshot](https://raw.githubusercontent.com/atarsa/start-up-template/master/Screenshot.png)
+
 
 ### Running this project locally
 - clone the repo `git clone https://github.com/atarsa/start-up-template.git`
