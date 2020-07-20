@@ -63,11 +63,14 @@ const StyledHeader = styled.header`
 `
 const DivWrapper = styled.div`
   display: flex;
+  position: relative;
   justify-content: space-between;
   width: 100%;
   margin-top: 2.5rem;
 
   button {
+    position: relative;
+    right: 0;
     background: none;
     border: none;
   }

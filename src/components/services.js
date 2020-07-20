@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const StyledSection = styled.section`
   background: ${props => props.theme.colors.lightGrey};
-  padding: 3rem 2rem;
+  padding: 5rem 2rem 3rem;
   min-height: 100vh;
   display: grid;
   align-items: center;
@@ -23,7 +23,7 @@ const StyledSection = styled.section`
 
   h2 {
     font-size: 3.5rem;
-    margin: 3rem 2rem;
+    margin: 4rem 2rem 3rem;
 
     text-align: center;
   }

@@ -9,7 +9,7 @@ const StyledSection = styled.section`
   min-height: 100vh;
   display: grid;
   align-items: center;
-  padding-top: 8rem;
+  padding-top: 9rem;
 
   @media (min-width: ${props => props.theme.breakpoints.large}) {
     grid-template-rows: 30rem 1fr;

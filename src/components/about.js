@@ -11,7 +11,7 @@ const StyledSection = styled.section`
   min-height: 100vh;
   display: grid;
   align-items: center;
-  padding-top: 6rem;
+  padding-top: 7rem;
 
   .container {
     max-width: 1200px;

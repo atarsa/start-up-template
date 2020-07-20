@@ -7,7 +7,7 @@ import Testimonials from "./testimonials"
 
 const StyledSection = styled.section`
   min-height: 100vh;
-  padding-top: 8rem;
+  padding-top: 9.5rem;
 
   .projects__container {
     max-width: 1200px;
