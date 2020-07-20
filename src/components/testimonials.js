@@ -22,7 +22,8 @@ const Wrapper = styled.div`
     position: absolute;
     overflow: hidden;
     visibility: hidden;
-    transform: translateX(20%);
+    opacity: 0;
+    transform: translateX(20px);
     grid-template-columns: 1fr;
     align-items: center;
     justify-content: center;
@@ -40,6 +41,7 @@ const Wrapper = styled.div`
   }
   .testimonial.active {
     height: 100%;
+    opacity: 1;
     display: grid;
     position: relative;
     visibility: visible;
