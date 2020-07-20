@@ -23,7 +23,7 @@ const Footer = () => {
     <StyledFooter>
       © {new Date().getFullYear()}, Build by A.Tarsa with
       {` `}
-      <a href="https://www.gatsbyjs.org">Gatsby</a>. Theme template by{" "}
+      <a href="https://www.gatsbyjs.org">GatsbyJS</a>. Theme design by{" "}
       <a href="https://webthemez.com/">webthemez.com</a>
     </StyledFooter>
   )
