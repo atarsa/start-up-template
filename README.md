@@ -5,7 +5,7 @@ A Single Page StartUp website build from scratch with Gatsby.
 Design taken from [Webthemez](https://webthemez.com/demo/startup-multi-purpose-responsive-html5-bootstrap-template/). 
 The website is fully responsive, with mobile first approach. 
 
-Live version can be found [here](https://startup-tempalte.netlify.app/)
+Live version can be found [here](https://startup-template.netlify.app/)
 
 ### Technologies used:
 - GatsbyJS
